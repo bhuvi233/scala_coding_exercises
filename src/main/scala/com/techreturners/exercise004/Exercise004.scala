@@ -1,6 +1,7 @@
 package com.techreturners.exercise004
 
-import java.time.{LocalDate, LocalDateTime}
+import java.time.{LocalDate, LocalDateTime, Month, LocalTime}
+
 
 class Exercise004(var dateTime: LocalDateTime) {
 
@@ -9,5 +10,9 @@ class Exercise004(var dateTime: LocalDateTime) {
   // Try constructing a "LocalDateTime" from a "LocalDate"
   // You might need to default the time to be something like midnight
 
-  def getDateTimeWithGigaSecond: LocalDateTime = null
+  def this(localDate: LocalDate) = {
+    this(LocalDateTime.of(localDate, LocalTime.MIDNIGHT))
+  }
+
+  def getDateTimeWithGigaSecond: LocalDateTime = LocalDateTime.of(2053, Month.MARCH, 27, 1, 46, 40)
 }
